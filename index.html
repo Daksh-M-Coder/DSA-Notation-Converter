@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notation Tutor: Infix ⇄ Postfix ⇄ Prefix</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Notation Tutor</h1>
+      <p>Step-by-step conversions between <strong>Infix</strong>, <strong>Postfix</strong>, and <strong>Prefix</strong></p>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <div class="input-row">
+          <label for="expr">Expression</label>
+          <input id="expr" type="text" placeholder="Example: A + B * C - D / E">
+        </div>
+
+        <div class="select-row">
+          <div class="select-group">
+            <label for="from">From</label>
+            <select id="from">
+              <option>Infix</option>
+              <option>Postfix</option>
+              <option>Prefix</option>
+            </select>
+          </div>
+          <div class="select-group">
+            <label for="to">To</label>
+            <select id="to">
+              <option>Postfix</option>
+              <option>Prefix</option>
+              <option>Infix</option>
+            </select>
+          </div>
+          <button id="convertBtn" class="primary">Convert</button>
+        </div>
+
+        <div class="anim-row">
+          <button id="playBtn">▶ Play</button>
+          <button id="pauseBtn">⏸ Pause</button>
+          <button id="stepBtn">⏭ Step</button>
+          <label class="speed">
+            Speed
+            <input id="speed" type="range" min="200" max="2000" step="100" value="800">
+          </label>
+          <button id="copyMdBtn" class="secondary">Copy Table as Markdown</button>
+        </div>
+      </section>
+
+      <section class="result">
+        <div class="result-bar">
+          <div>
+            <span class="muted">Result:</span>
+            <code id="resultExpr">—</code>
+          </div>
+          <div class="muted" id="metaInfo"></div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="stepsTable">
+            <thead>
+              <tr>
+                <th>Iter</th>
+                <th>Input</th>
+                <th>Stack</th>
+                <th>Output</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Made for DSA learners • Supports variables, digits, parentheses and ^ * / + -</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+
